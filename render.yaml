@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tinylink
+    env: node
+    region: singapore
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_API_URL
+        value: ""
+      - key: BASE_URL
+        value: ""
