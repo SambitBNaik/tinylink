@@ -10,8 +10,8 @@ const PORT = process.env.PORT ? Number(process.env.PORT):5000;
 const frontendBuildPath = path.join(__dirname,"../../frontend/.next");
 app.use(express.static(frontendBuildPath));
 
-app.get("*",(req,res)=>{
-    res.send(path.join(frontendBuildPath,"index.html"));
+app.get(/.*/,(req,res)=>{
+    res.sendFile(path.join(frontendBuildPath,"index.html"));
 })
 async function start(){
     try {

@@ -57,6 +57,7 @@
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
+    "sourceMap": false
   },
   "include": ["src/**/*"]
 }
