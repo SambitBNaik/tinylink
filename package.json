@@ -9,7 +9,6 @@
   ],
 
   "scripts": {
-    "postinstall": "npm install --workspaces",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "npm --workspace backend run dev",
     "dev:frontend": "npm --workspace frontend run dev",
