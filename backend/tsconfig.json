@@ -56,7 +56,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    "types": ["node"],
     "moduleResolution": "node",
     "sourceMap": false
   },
