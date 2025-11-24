@@ -3,8 +3,8 @@ services:
     name: tinylink
     env: node
     region: singapore
-    buildCommand: "npm install --legacy-peer-deps && npm install --workspace=backend --legacy-peer-deps && npm install --workspace=frontend --legacy-peer-deps && npm run build"
-    startCommand: "npm start"
+    buildCommand: "cd backend && npm install && npm run build && cd ../frontend && npm install && npm run build && cd .."
+    startCommand: "node backend/dist/server.js"
     envVars:
       - key: DATABASE_URL
         sync: false
