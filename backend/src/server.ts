@@ -7,7 +7,7 @@ import { testConnection } from "./config/db";
 import app from "./app";
 const PORT = process.env.PORT ? Number(process.env.PORT):5000;
 
-const frontendBuildPath = path.join(__dirname,"../../frontend/dist");
+const frontendBuildPath = path.join(__dirname,"../../frontend/.next");
 app.use(express.static(frontendBuildPath));
 
 app.get(/.*/,(_req,res)=>{
