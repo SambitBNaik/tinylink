@@ -1,10 +1,11 @@
 {
-  "name": "backend",
+  "name": "tinylink",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "main": "backend/dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "nodemon --exec ts-node src/server.ts",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "nodemon --exec ts-node backend/src/server.ts",
+    "dev": "nodemon --exec ts-node backend/src/server.ts",
     "migrate": "psql \"$DATABASE_URL\" -f migrations/init.sql"
   },
   "keywords": [],
