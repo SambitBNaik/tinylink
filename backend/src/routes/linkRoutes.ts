@@ -3,10 +3,10 @@ import { createLink, deleteLink, getLink, listLinks, redirectToTarget } from "..
 
 const router = Router();
 
-router.post("/api/links", createLink);
-router.get("/api/links", listLinks);
-router.get("/api/links/:code", getLink);
-router.delete("/api/links/:code",deleteLink);
+router.post("/links", createLink);
+router.get("/links", listLinks);
+router.get("/links/:code", getLink);
+router.delete("/links/:code",deleteLink);
 
 router.get("/:code",redirectToTarget);
 

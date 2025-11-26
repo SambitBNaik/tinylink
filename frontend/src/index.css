@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+  .card{
+    @apply rounded-2xl border border-white/20 bg-white/5 p-6 shadow-xl shadow-slate-900/50 backdrop-blur;
+  }
+}

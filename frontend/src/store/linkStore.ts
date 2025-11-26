@@ -1,7 +1,6 @@
 import { create } from "zustand";
-import { CreateLinkPayload, Linki } from "../type/link";
 import { linkService } from "../services/linkService";
-import { redirect } from "next/navigation";
+import type { CreateLinkPayload, Linki } from "../types/link";
 
 interface LinkStore {
   links: Linki[];
@@ -71,12 +70,12 @@ export const useLinkStore = create<LinkStore>((set, get)=>({
     redirectTotarget : async(code: string)=>{
         try {
             // set({ loading: true, error:null});
-            // const res =  await linkService.redirectToTarget(code);
+            const res =  await linkService.redirectToTarget(code);
             // set({
             //     redirectLink: res,
             //     loading:false,
             // })
-            window.location.href =`${process.env.NEXT_PUBLIC_API_URL}/${code}`;
+            // window.location.href =`${process.env.NEXT_PUBLIC_API_URL}/${code}`;
         } catch (error) {
             set({loading: false, error:"Failed to fetch redirect link."});
         }

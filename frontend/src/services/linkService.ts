@@ -1,4 +1,5 @@
-import { ApiResponse, CreateLinkPayload, Linki } from "../type/link";
+
+import type { CreateLinkPayload, Linki } from "../types/link";
 import axiosInstance from "../utils/axiosInstance";
 
 
