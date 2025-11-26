@@ -153,7 +153,8 @@ export function LinkDashboard() {
           </p>
         </div>
         <div className="overflow-hidden rounded-2xl border border-white/10">
-          <table className="min-w-full divide-y divide-white/10 text-sm">
+         <div className="overflow-x-auto">
+             <table className="min-w-full divide-y divide-white/10 text-sm">
             <thead>
               <tr className="bg-white/5 text-left text-xs uppercase tracking-wide text-slate-400">
                 <th className="px-4 py-3">Code</th>
@@ -262,6 +263,7 @@ export function LinkDashboard() {
               })}
             </tbody>
           </table>
+         </div>
         </div>
       </section>
     </div>
