@@ -14,10 +14,11 @@ export function LinkForm({ onLinkCreated }: LinkFromProps) {
     success: "",
     isSubmitting: false
   })
-  const [displayBase, setDisplayBase] = useState(
-    import.meta.env.VITE_API_URL?.replace(/\/$/, "") ?? "",);
+  // const [displayBase, setDisplayBase] = useState(
+  //   import.meta.env.VITE_API_URL?.replace(/\/$/, "") ?? "",);
   const { createLink } = useLinkStore();
 
+  const displayBase = import.meta.env.VITE_API_URL?.replace(/\/$/, "")
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState(prev => ({ ...prev, error: null, success: "", isSubmitting: true }));

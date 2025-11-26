@@ -35,19 +35,19 @@ const copyToClipboard = async (value: string) => {
   }
 };
 
-type BannerState = { text: string; tone: "success" | "error" } | null;
+// type BannerState = { text: string; tone: "success" | "error" } | null;
 export function LinkDashboard() {
-  const { loading, error, links, fetchLinks, fetchLinkStats, deleteLink } =
+  const { loading, error, links, fetchLinks } =
     useLinkStore();
   const [filteredLinks, setFilteredLinks] = useState<Linki[]>([]);
-  const [banner, setBanner] = useState<BannerState>(null);
+//   const [banner, setBanner] = useState<BannerState>(null);
   const [isCopying, startCopyTransition] = useTransition();
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   useEffect(() => {
     fetchLinks();
-  }, [fetchLinks]);
+  }, [fetchLinks]);     
 
   useEffect(() => {
     setFilteredLinks(links);
@@ -60,12 +60,12 @@ export function LinkDashboard() {
       setTimeout(() => setCopiedCode(null), 2000);
     }
     startCopyTransition(() => {
-      setBanner({
-        text: success
-          ? "Short link copied to clipboard"
-          : "Unable to copy link.",
-        tone: success ? "success" : "error",
-      });
+    //   setBanner({
+    //     text: success
+    //       ? "Short link copied to clipboard"
+    //       : "Unable to copy link.",
+    //     tone: success ? "success" : "error",
+    //   });
     });
   };
 
@@ -105,15 +105,15 @@ export function LinkDashboard() {
     if (!confirmDelete) return;
     try {
       await useLinkStore.getState().deleteLink(code);
-      setBanner({
-        text: `Link "${code}" deleted successfully.`,
-        tone: "success",
-      });
+    //   setBanner({
+    //     text: `Link "${code}" deleted successfully.`,
+    //     tone: "success",
+    //   });
     } catch (err) {
-      setBanner({
-        text: "Failed to delete link.",
-        tone: "error",
-      });
+    //   setBanner({
+    //     text: "Failed to delete link.",
+    //     tone: "error",
+    //   });
     }
   };
   return (

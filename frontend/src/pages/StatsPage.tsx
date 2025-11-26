@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function StatsPage() {
     const params = useParams();
     const code = params.code as string;
-    const { selectedLink, fetchLinkStats, loading, error } = useLinkStore();
+    const { selectedLink, fetchLinkStats, loading } = useLinkStore();
 
     useEffect(() => {
         fetchLinkStats(code);

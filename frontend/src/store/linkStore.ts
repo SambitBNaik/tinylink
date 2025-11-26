@@ -70,7 +70,7 @@ export const useLinkStore = create<LinkStore>((set, get)=>({
     redirectTotarget : async(code: string)=>{
         try {
             // set({ loading: true, error:null});
-            const res =  await linkService.redirectToTarget(code);
+            await linkService.redirectToTarget(code);
             // set({
             //     redirectLink: res,
             //     loading:false,
